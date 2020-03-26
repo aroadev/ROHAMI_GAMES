@@ -1,0 +1,157 @@
+﻿body {
+}
+
+#grad {
+    background-image: linear-gradient(to bottom right,#44001A, #7D1128, #753742);
+    background-color: #7D1128;
+    background: -prefix-linear-gradient(top, blue, white);
+}
+
+.defaultLayaout {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: -150px;
+    /*filter: blur(8px);
+    -webkit-filter: blur(8px);*/
+    background-color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.centeringContent {
+    display: block;
+    align-content: center;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+    overflow: hidden;
+}
+
+li {
+    display: inline;
+    text-align: center;
+    float: left;
+}
+
+    li a {
+        display: block;
+        color: #000;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+li a:hover {
+    background-color: bisque;
+    text-decoration: none;
+}
+
+a {
+    display: block;
+    text-align: center;
+    align-content: center;
+    color: #D8D5DB;
+}
+
+    a:link {
+        color: #D8D5DB;
+    }
+        a:link:hover {
+            color: #A7C6DA;
+        }
+
+.active
+{
+    background-color: cadetblue;
+}
+
+header {
+    background-color: #666;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+
+footer {
+    background-color: #777;
+    padding: 10px;
+    text-align: center;
+    color: #001514;
+}
+
+nav {
+    float: left;
+    width: 30%;
+    background: #ccc;
+    padding: 20px;
+}
+
+article {
+    float: left;
+    padding: 20px;
+    width: 70%;
+    background-color: #f1f1f1;
+}
+
+.lblRegister {
+    color: #001514;
+    font-size: 16px;
+}
+
+.tbLogin {
+    background: transparent;
+    border: 2px solid #456879;
+    border-radius: 10px;
+    height: 30px;
+    width: 230px;
+    text-align: center;
+    align-content: center;
+    margin: 0 auto;
+    display: block;
+}
+
+.buttonRegister {
+    background-color: aquamarine;
+}
+
+.tbRegister {
+    color: bisque;
+    background: transparent;
+    border-radius: 10px;
+    height: 30px;
+    width: 230px;
+}
+
+.lblCentering {
+    color: white;
+    display: block;
+    align-content: center;
+    text-align: center;
+}
+
+.login {
+    padding: 50px;
+}
+
+.buttonLogin {
+    background-color: #e7e7e7;
+    color: black;
+    display: block;
+    align-content: center;
+    text-align: center;
+    margin: 0 auto;
+    width: 150px;
+}
+
+@media (max-width: 600px) {
+    nav, article {
+        width: 100%;
+        height: auto;
+    }
