@@ -10,10 +10,12 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:GridView runat="server" ID="gvJuegos">
+            <asp:GridView runat="server" ID="gvJuegos" AutoGenerateColumns="false" DataKeyNames="ID_JUEGO">
                 <Columns>
-                    <asp:TemplateField>
-
+                    <asp:TemplateField HeaderText="Prueba">
+                        <ItemTemplate>
+                            <asp:Label ID="prueba" runat="server" Text='<%# Eval("NOMBRE") %>'></asp:Label>
+                        </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
