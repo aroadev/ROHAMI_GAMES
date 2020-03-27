@@ -15,5 +15,19 @@ namespace ROHAMI_GAMES_WEBAPP.AppCode.Compra.Bussines
             DataTable dt = objDC.mostrarJuegoEnCompra(idJuego);
             return dt;
         }
+
+        public int CompraJuego(string idJuego, string idUsuario, string tipoPago)
+        {
+            compra_DC objDC = new compra_DC();
+            objDC.CompraJuego(idJuego, idUsuario, tipoPago);
+            return 0;
+        }
+
+        public DataTable LlenaTarjetas(string idUsuario)
+        {
+            compra_DC objDC = new compra_DC();
+            DataTable dt = objDC.LlenaTarjetas(idUsuario);
+            return dt;
+        }
     }
 }

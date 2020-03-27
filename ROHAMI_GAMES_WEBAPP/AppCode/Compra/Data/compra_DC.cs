@@ -24,10 +24,40 @@ namespace ROHAMI_GAMES_WEBAPP.AppCode.Compra.Data
 
             return dt;
         }
-        public DataSet comprarJuego()
+        public int CompraJuego(string idJuego, string idUsuario, string tipoPago)
         {
-            DataSet ds = new DataSet();
-            return ds;
+            SqlConnection objCon = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            objCon.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = objCon;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "RG_spi_ComprarJuego";
+
+            cmd.Parameters.AddWithValue("@ID_USUARIO", idUsuario);
+            cmd.Parameters.AddWithValue("@ID_JUEGO", idJuego);
+            cmd.Parameters.AddWithValue("@TIPO_PAGO", tipoPago);
+            cmd.ExecuteNonQuery();
+
+            return 0;
+        }
+
+        public DataTable LlenaTarjetas(string idUsuario)
+        {
+            SqlConnection objCon = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            objCon.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = objCon;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "RG_spq_MostrarTarjetas";
+
+            cmd.Parameters.AddWithValue("@ID_USUARIO", idUsuario);
+            cmd.ExecuteNonQuery();
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
         }
     }
 }

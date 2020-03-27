@@ -77,6 +77,10 @@
                     <br />
                     <asp:Label runat="server" ID="lblPrecio" CssClass="h4 text-white"></asp:Label>
                     <br />
+                    <asp:DropDownList runat="server" ID="ddlTiposPago">
+
+                    </asp:DropDownList>
+                    <br />
                     <asp:Button runat="server" ID="btnComprar" CssClass="btn btn-primary" Text="Comprar" OnClick="btnComprar_Click"/>
                     <br />
                 </div>
