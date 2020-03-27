@@ -15,10 +15,10 @@ namespace ROHAMI_GAMES_WEBAPP
         {
             if(!IsPostBack)
             {
-                
-                if(Session["DatosUsuario"] == null)
+
+                if (Session["DatosUsuario"] == null)
                 {
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Notify", "alert('Notification : No a ingresado, porfavor ingrese con su cuenta de ROHAMI GAME ACCES.');", true);
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Notify", "alert('Notification : No a ingresado, porfavor ingrese con su cuenta de ROHAMI GAMES ACCES.');", true);
                     Response.Redirect("Login.aspx");
                 }
                 else

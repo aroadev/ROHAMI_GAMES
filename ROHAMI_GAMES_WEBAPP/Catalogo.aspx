@@ -64,7 +64,7 @@
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Precio">
                                 <ItemTemplate>
-                                    <asp:Label runat="server" ID="lblEmpresa" Text='<%# Eval("PRECIO") %>'></asp:Label>
+                                    <asp:Label runat="server" ID="lblPrecio" Text='<%# Eval("PRECIO") %>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:TemplateField>
