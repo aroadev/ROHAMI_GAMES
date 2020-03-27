@@ -30,7 +30,7 @@
                         <a class="nav-link text-white" href="#MISJUEGOS">MIS JUEGOS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#CATALOGO">CATALOGO</a> 
+                        <a class="nav-link text-white" href="Catalogo.aspx">CATALOGO</a> 
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
