@@ -25,9 +25,9 @@ namespace ROHAMI_GAMES_WEBAPP
                 {
                     DataSet ds = (DataSet)Session["DatosUsuario"];
                     lblUsuario.Text = ds.Tables[0].Rows[0]["USERNAME"].ToString();
-                    string nombreJuego = "MODERN WARFARE"; /* Se declara una variable con el nombre del juego, haciendo TryHard Codding */
+                    string idJuego = Request.QueryString["idJuego"].ToString(); /* Se declara una variable con el nombre del juego, haciendo TryHard Codding */
                     compra_BC objBC = new compra_BC(); /* Se llama a la clase de Bussines */
-                    DataTable dt = objBC.mostrarJuegoEnCompra(nombreJuego); /* Se crea la tabla "dt" con los valores de la clase de Bussines */
+                    DataTable dt = objBC.mostrarJuegoEnCompra(idJuego); /* Se crea la tabla "dt" con los valores de la clase de Bussines */
                     lblNombreJuego.Text = dt.Rows[0]["NOMBRE"].ToString(); /* Se asigna al Label el nombre del juego desde la tabla "dt" */
                     lblEmpresa.Text = dt.Rows[0]["EMPRESA"].ToString();
                     lblClasificacion.Text = dt.Rows[0]["CLASIFICACION"].ToString();

@@ -33,6 +33,7 @@ namespace ROHAMI_GAMES_WEBAPP
             var DataKeyNames = gvJuegos.DataKeys[index].Values; /* Creamos un objeto var para almacenar el DAtaKeyName que necesitamos */
             string idJuego = (DataKeyNames[0].ToString()); /* Lo convertimos a String para poder usarlo */
 
+            Response.Redirect("compra.aspx?idJuego=" + idJuego);
         }
     }
 }

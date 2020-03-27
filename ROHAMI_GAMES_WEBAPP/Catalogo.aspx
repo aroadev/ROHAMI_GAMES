@@ -6,6 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    
     <!-- Conectamos todas las dependencias de Bootstrap 4.4 -->
     <link rel="stylesheet" href="CssStyles/loginCss.css" />
     <link rel="stylesheet" href="CssStyles/animation.css" />
