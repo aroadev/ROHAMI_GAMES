@@ -115,3 +115,4 @@ C:\Users\HAMED\Source\Repos\hmnvkv\ROHAMI_GAMES\ROHAMI_GAMES_WEBAPP\obj\Debug\RO
 C:\Users\HAMED\Source\Repos\hmnvkv\ROHAMI_GAMES\ROHAMI_GAMES_WEBAPP\obj\Debug\ROHAMI_GAMES_WEBAPP.csproj.CopyComplete
 C:\Users\HAMED\Source\Repos\hmnvkv\ROHAMI_GAMES\ROHAMI_GAMES_WEBAPP\obj\Debug\ROHAMI_GAMES_WEBAPP.dll
 C:\Users\HAMED\Source\Repos\hmnvkv\ROHAMI_GAMES\ROHAMI_GAMES_WEBAPP\obj\Debug\ROHAMI_GAMES_WEBAPP.pdb
+C:\Users\HAMED\Source\Repos\hmnvkv\ROHAMI_GAMES\ROHAMI_GAMES_WEBAPP\obj\Debug\ROHAMI_GAMES_WEBAPP.csproj.CoreCompileInputs.cache

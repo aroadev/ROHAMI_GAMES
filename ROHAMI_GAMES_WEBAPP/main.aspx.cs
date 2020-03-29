@@ -26,7 +26,8 @@ namespace ROHAMI_GAMES_WEBAPP.AppCode
                     lkbCerrarSesion.Visible = true;
                     lkbRegistrar.Visible = false;
                     lkbIniciarSesion.Visible = false;
-                    if (ds.Tables[0].Rows[0]["EMPRESA"] != "0")
+                    string Empresa = ds.Tables[0].Rows[0]["EMPRESA"].ToString();
+                    if (Empresa != "0")
                     {
                         lkbAgregarJuego.Visible = true;
                     }

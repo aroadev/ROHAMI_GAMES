@@ -73,6 +73,7 @@
   <ItemGroup>
     <Content Include="Catalogo.aspx" />
     <Content Include="compra.aspx" />
+    <Content Include="ConfiguracionCuenta.aspx" />
     <Content Include="CssStyles\animation.css" />
     <Content Include="CssStyles\bootstrap-responsive.css" />
     <Content Include="CssStyles\bootstrap.css" />
@@ -119,6 +120,8 @@
     <Compile Include="AppCode\Catalog\Data\Catalog_DC.cs" />
     <Compile Include="AppCode\Compra\Bussines\compra_BC.cs" />
     <Compile Include="AppCode\Compra\Data\compra_DC.cs" />
+    <Compile Include="AppCode\ConfiguracionCuenta\Business\ConfiguracionCuenta_BC.cs" />
+    <Compile Include="AppCode\ConfiguracionCuenta\Data\ConfiguracionCuenta_DC.cs" />
     <Compile Include="AppCode\Login\Business\Login_BC.cs" />
     <Compile Include="AppCode\Login\Data\Login_DC.cs" />
     <Compile Include="AppCode\Main\Main_BC.cs" />
@@ -140,6 +143,13 @@
     </Compile>
     <Compile Include="compra.aspx.designer.cs">
       <DependentUpon>compra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfiguracionCuenta.aspx.cs">
+      <DependentUpon>ConfiguracionCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfiguracionCuenta.aspx.designer.cs">
+      <DependentUpon>ConfiguracionCuenta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

@@ -63,6 +63,7 @@ namespace ROHAMI_GAMES_WEBAPP
             {
                 /* Se le advierte al cliente que no cuenta con metodos de pago */
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Notify", "alert('Advertencia: No tiene datos de tarjeta, porfavor en la configuración de su cuenta agrege una.');", true);
+                return; /* Retornamos para evitar que sigan las demás instrucciones */
             }
             else
             {

@@ -40,7 +40,7 @@
                           <asp:Label runat="server" ID="lblUsuario" ></asp:Label>
                       </a>
                       <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item text-white" href="#">Mi Cuenta</a>
+                        <a class="dropdown-item text-white" href="ConfiguracionCuenta.aspx">Mi Cuenta</a>
                         <asp:LinkButton CssClass="dropdown-item text-white" ID="lkbIniciarSesion" runat="server" Text="Iniciar Sesión" Visible="true" OnClick="lkbIniciarSesion_Click"></asp:LinkButton>
                         <asp:LinkButton CssClass="dropdown-item text-white" ID="lkbCerrarSesion" runat="server" Text="Cerrar Sesión" Visible="false" OnClick="lkbCerrarSesion_Click"></asp:LinkButton>
                         <asp:LinkButton CssClass="dropdown-item text-white" ID="lkbRegistrar" runat="server" Text="Registrar" Visible="True" OnClick="lkbRegistrar_Click"></asp:LinkButton>
