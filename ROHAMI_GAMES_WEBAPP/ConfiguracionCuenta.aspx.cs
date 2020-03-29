@@ -18,7 +18,7 @@ namespace ROHAMI_GAMES_WEBAPP
         {
             if(!IsPostBack)
             {
-                if(Session["DatosUsuario"].Equals(null))
+                if(Session["DatosUsuario"] == null)
                 {
                     Response.Redirect("Login.aspx");
 

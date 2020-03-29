@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -23,12 +24,12 @@ namespace ROHAMI_GAMES_WEBAPP
                 }
 
                 /* Se llenan los DropDownList con For */
-                for (int a = 1; a <= 31; a++)
+                for (int a = 1; a <= 12; a++)
                 {
                     string item = Convert.ToString(a);
                     ddlDia.Items.Add(item);
                 }
-                for (int a = 01; a <= 12; a++)
+                for (int a = 20; a <= 35; a++)
                 {
                     string item = Convert.ToString(a);
                     ddlMes.Items.Add(item);
@@ -38,19 +39,23 @@ namespace ROHAMI_GAMES_WEBAPP
 
         protected void btnAgregarMetodo_Click(object sender, EventArgs e)
         {
-            DataTable dt = (DataTable)Session["DatosUsuario"];
+            //DataTable dt = (DataTable)Session["DatosUsuario"];
+            DataSet ds = (DataSet)Session["DatosUsuario"];
             Pagar_BC objBC = new Pagar_BC();
             string Nombre = txtNombrePropietario.Text.ToUpper().Trim();
             string Numero = txtNumeroTarjeta.Text.ToUpper().Trim();
             string CVV = txtCVV.Text.ToUpper().Trim();
-            string eDay = ddlDia.SelectedValue;
-            string eMes = ddlMes.SelectedValue;
+            string eMes = ddlDia.SelectedValue;
+            string eYear = ddlMes.SelectedValue;
 
-            string expiracion = eDay + "/" + eMes;
+            string expiracion = eMes + "/" + eYear;
 
-            string idUsuario = dt.Rows[0]["ID_USUARIO"].ToString();
+            string idUsuario = ds.Tables[0].Rows[0]["ID_USUARIO"].ToString();
 
             objBC.GuardarPago(Nombre, Numero, expiracion, CVV, idUsuario);
+            lblSucces.Visible = true;
+            Thread.Sleep(3000);
+            Response.Redirect("ConfiguracionCuenta.aspx");
         }
     }
 }

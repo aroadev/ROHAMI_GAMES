@@ -18,7 +18,7 @@ namespace ROHAMI_GAMES_WEBAPP.AppCode.ConfiguracionCuenta.Business
         public void ActualizaDatos(string idUsuario, string nUsuario, string NombreReal, string Apellido, string Correo)
         {
             ConfiguracionCuenta_DC objDC = new ConfiguracionCuenta_DC();
-            _ = objDC.ActualizaDatos(idUsuario, nUsuario, NombreReal, Apellido, Correo);
+            objDC.ActualizaDatos(idUsuario, nUsuario, NombreReal, Apellido, Correo);
         }
     }
 }

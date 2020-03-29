@@ -82,7 +82,7 @@
                    <div class="form-group">
                        <button class="btn btn-secondary"><a href="DatosPago.aspx" class="text-white">Agregar Un Método de Pago</a></button>
                    </div>
-                   <asp:Label runat="server" ID="lblSuccesUpdate" CssClass="alert alert-success" Text="Actualizado con exito"></asp:Label>
+                   <asp:Label runat="server" ID="lblSuccesUpdate" CssClass="alert alert-success" Text="Actualizado con exito" Visible="false"></asp:Label>
                    <asp:Button runat="server" ID="btnActualizar" CssClass="btn btn-black" Text="Actualizar Datos" OnClick="btnActualizar_Click"/>
                    <asp:Button runat="server" ID="btnCancelar" CssClass ="btn btn-secondary" Text="Cancelar"/>
                </form>

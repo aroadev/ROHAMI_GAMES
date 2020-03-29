@@ -70,9 +70,9 @@
                                         <div class="form-group"> <label><span class="hidden-xs">
                                                     <h6>Expiration Date</h6>
                                                 </span></label>
-                                            <h6> Día </h6> 
-                                            <asp:DropDownList runat="server" ID="ddlDia" ></asp:DropDownList>
                                             <h6> Mes </h6> 
+                                            <asp:DropDownList runat="server" ID="ddlDia" ></asp:DropDownList>
+                                            <h6> Año </h6> 
                                             <asp:DropDownList runat="server" ID="ddlMes"></asp:DropDownList>
                                         </div>
                                     </div>
@@ -83,6 +83,7 @@
                                     </div>
                                 </div>
                                 <div class="card-footer"> <asp:Button runat="server" ID="btnAgregarMetodo" OnClick="btnAgregarMetodo_Click" CssClass="subscribe btn btn-primary btn-block shadow-sm" Text="Agregar Pago" /> </div>
+                                <asp:Label runat="server" ID="lblSucces" CssClass="alert alert-success" Text="¡Método agregado de pago agregado!" Visible="false"></asp:Label>
                             </form>
                         </div>
                     </div> <!-- Fin -->

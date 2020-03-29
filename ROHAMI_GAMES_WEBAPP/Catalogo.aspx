@@ -18,7 +18,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body class="bg-dark">
     <form id="form1" runat="server">
         <nav class="navbar-nav navbar-expand-xl navbar-dark sticky-top" style="background-color: #0d0a0b">
             <img src="images/logo.png" class="navbar-brand" style="width: 10%"/>
@@ -50,7 +50,7 @@
         </nav>
         <br />
         <center>
-            <asp:GridView runat="server" ID="gvJuegos" DataKeyNames="ID_JUEGO" AutoGenerateColumns="false" CssClass="justify-content-center text-center" Width="652px">
+            <asp:GridView runat="server" ID="gvJuegos" DataKeyNames="ID_JUEGO" AutoGenerateColumns="false" CssClass="justify-content-center text-center text-white" Width="652px">
                         <Columns>
                             <asp:TemplateField HeaderText="Nombre">
                                 <ItemTemplate>

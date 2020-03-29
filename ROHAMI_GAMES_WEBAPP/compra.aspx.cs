@@ -26,9 +26,10 @@ namespace ROHAMI_GAMES_WEBAPP
                 {
                     compra_BC objBC = new compra_BC(); /* Se llama a la clase de Bussines. */
                     DataSet ds = (DataSet)Session["DatosUsuario"]; /* Bajamos los datos de sesión del usuario. */
-                    DataTable dt = objBC.LlenaTarjetas(ds.Tables[0].Rows[0]["ID_USUARIO"].ToString()); /* Llenamos un data table con los valores de las tarjetas almacenadas del usuario. */
+                    string idUsuario = ds.Tables[0].Rows[0]["ID_USUARIO"].ToString();
+                    DataTable dt = objBC.LlenaTarjetas(idUsuario); /* Llenamos un data table con los valores de las tarjetas almacenadas del usuario. */
 
-                    if (dt.Equals(null)) /* Evaluamos si la tabla de tarjetas viene vacía. */
+                    if (dt == null) /* Evaluamos si la tabla de tarjetas viene vacía. */
                     {
                         /* Le mandamos una advertencia al usuario dónde le comentamos que no tiene datos de tarjeta asociados a su cuenta */
                         ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Notify", "alert('Advertencia: No tiene datos de tarjeta, porfavor en la configuración de su cuenta agrege una.');", true);
@@ -49,7 +50,7 @@ namespace ROHAMI_GAMES_WEBAPP
                     lblEmpresa.Text = dtJuegos.Rows[0]["EMPRESA"].ToString();
                     lblClasificacion.Text = dtJuegos.Rows[0]["CLASIFICACION"].ToString();
                     lblPlataforma.Text = dtJuegos.Rows[0]["TIPO_PLATAFORMA"].ToString();
-                    lblPrecio.Text = dt.Rows[0]["PRECIO"].ToString();
+                    lblPrecio.Text = dtJuegos.Rows[0]["PRECIO"].ToString();
                 }
             }
         }
