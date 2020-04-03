@@ -77,6 +77,10 @@
                     <br />
                     <asp:Label runat="server" ID="lblPrecio" CssClass="h4 text-white"></asp:Label>
                     <br />
+
+                    <asp:Label runat="server" ID="lblTarjeta" CssClass="h4 text-white" Text="Seleccione la tarjeta a pagar"></asp:Label>
+                    <br />
+                    <br />
                     <asp:DropDownList runat="server" ID="ddlTiposPago">
 
                     </asp:DropDownList>

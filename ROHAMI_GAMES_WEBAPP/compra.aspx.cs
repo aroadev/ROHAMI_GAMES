@@ -38,7 +38,9 @@ namespace ROHAMI_GAMES_WEBAPP
                     else 
                     {
                         /* Encambio si viene con datos, la llenamos con el DataTable y la pintamos con las tarjetas registradas del Usuario. */
-                        ddlTiposPago.DataSource = dt; /* Colo camos el origen de los datos. */
+                        ddlTiposPago.DataTextField = "NUMERO_TARJETA";
+                        ddlTiposPago.DataValueField = "ID_TARJETAS";
+                        ddlTiposPago.DataSource = dt; /* Colocamos el origen de los datos. */
                         ddlTiposPago.DataBind(); /* Pintamos los datos */
                     }
 
