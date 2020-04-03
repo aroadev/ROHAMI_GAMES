@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace ROHAMI_GAMES_WEBAPP.AppCode
 {
+    /* Esto es una prueba de una nueva rama de desarrollo para no tocar el código principal. */
     public partial class main : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
