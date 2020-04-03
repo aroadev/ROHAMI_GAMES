@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ROHAMI_GAMES_WEBAPP.AppCode.Main;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -13,54 +14,58 @@ namespace ROHAMI_GAMES_WEBAPP.AppCode
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            /* Validamos que sea la primera vez que el usuario entra a la página */
             if(!IsPostBack)
             {
-                if(Session["DatosUsuario"] == null)
+                /* Comprobamos si los datos de Sesión vienen con datos en un principio */
+                if(Session["DatosUsuario"] != null)
                 {
-                    lblUsuario.Text = " USUARIO";
-                    lkbIniciarSesion.Visible = true;
+                    /* Bajamos los datos de sesión a un DataTable */
+                    DataTable dt = (DataTable)Session["DatosUsuario"];
+                    lblUser.Text = dt.Rows[0]["USERNAME"].ToString();
+                    string Empresa = dt.Rows[0]["EMPRESA"].ToString();
+                    if (Empresa != "0")
+                    {
+
+                    }
                 }
                 else
                 {
-                    DataSet ds = (DataSet)Session["DatosUsuario"];
-                    lblUsuario.Text = ds.Tables[0].Rows[0]["USERNAME"].ToString();
-                    lkbCerrarSesion.Visible = true;
-                    lkbRegistrar.Visible = false;
-                    lkbIniciarSesion.Visible = false;
-                    string Empresa = ds.Tables[0].Rows[0]["EMPRESA"].ToString();
-                    if (Empresa != "0")
-                    {
-                        lkbAgregarJuego.Visible = true;
-                    }
+                    /* Ponemos el label del Botón con un texto para iniciar sesión */
+                    lblUser.Text = "Iniciar Sesión";
                 }
                 
             }
         }
 
-        protected void txtLogin_Click(object sender, EventArgs e)
+        protected void btnLogin_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Login.aspx");
-        }
+            /* Llamamos a la capa de Business */
+            Main_BC objBC = new Main_BC();
 
-        protected void lkbCerrarSesion_Click(object sender, EventArgs e)
-        {
-            Session["DatosUsuario"] = null;
-            Response.Redirect("main.aspx");
-        }
+            /* Tomamos en variables String los valores de los Textbox de inicio de sesión */
+            string usr = txtLogin.Text.Trim();
+            string psw = txtPassword.Text.Trim();
 
-        protected void lkbRegistrar_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("register.aspx");
-        }
+            /* Llamamos a la variable de sesión y le asignamos el resultado de la función Login */
+            Session["DatosUsuario"] = objBC.Login(usr, psw);
 
-        protected void lkbIniciarSesion_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("login.aspx");
-        }
+            /* Creamos un DataTable con los datos del Usuario para comprobar que sea existente */
+            DataTable dtUsr = (DataTable)Session["DatosUsuario"];
 
-        protected void lkbAgregarJuego_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("SubirJuego.aspx");
+            /* Comprobamos que el usuario sea existente */
+            if (dtUsr.Rows.Count != 0)
+            {
+                Response.Redirect("main.aspx");
+                return;
+            }
+            else
+            {
+                /* Mostramos mensaje de alerta */
+                lblError.Visible = true;
+                return;
+            }
+            
         }
     }
 }

@@ -111,6 +111,7 @@
     <Content Include="images\backgroundLogin.jpg" />
     <Content Include="DatosPago.aspx" />
     <Content Include="register.aspx" />
+    <Content Include="scripts\funcitons.js" />
     <Content Include="SubirJuego.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -123,6 +124,7 @@
     <Compile Include="AppCode\Compra\Data\compra_DC.cs" />
     <Compile Include="AppCode\ConfiguracionCuenta\Business\ConfiguracionCuenta_BC.cs" />
     <Compile Include="AppCode\ConfiguracionCuenta\Data\ConfiguracionCuenta_DC.cs" />
+    <Compile Include="AppCode\Connection.cs" />
     <Compile Include="AppCode\Login\Business\Login_BC.cs" />
     <Compile Include="AppCode\Login\Data\Login_DC.cs" />
     <Compile Include="AppCode\Main\Main_BC.cs" />
