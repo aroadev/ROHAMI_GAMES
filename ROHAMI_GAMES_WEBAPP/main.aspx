@@ -34,23 +34,15 @@
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <div class="dropdown show">
-                      <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="fas fa-user"></i>
-                          <asp:Label runat="server" ID="lblUsuario" ></asp:Label>
-                      </a>
-                      <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item text-white" href="ConfiguracionCuenta.aspx">Mi Cuenta</a>
-                        <asp:LinkButton CssClass="dropdown-item text-white" ID="lkbIniciarSesion" runat="server" Text="Iniciar Sesión" Visible="true" OnClick="lkbIniciarSesion_Click"></asp:LinkButton>
-                        <asp:LinkButton CssClass="dropdown-item text-white" ID="lkbCerrarSesion" runat="server" Text="Cerrar Sesión" Visible="false" OnClick="lkbCerrarSesion_Click"></asp:LinkButton>
-                        <asp:LinkButton CssClass="dropdown-item text-white" ID="lkbRegistrar" runat="server" Text="Registrar" Visible="True" OnClick="lkbRegistrar_Click"></asp:LinkButton>
-                        <asp:LinkButton CssClass="dropdown-item text-white" ID="lkbAgregarJuego" runat="server" Text="Añadir Juego" Visible="false" OnClick="lkbAgregarJuego_Click"></asp:LinkButton>
-                      </div>
-                      </div>
-                    </div>
-                </form>
-            </div>           
+                    <!-- Button Login -->
+                    <button type="button" class="btn-link bg-dark" data-toggle="modal" data-target="#exampleModalCenter">
+                        <asp:Label runat="server" ID="lblUser" CssClass="label text-white"></asp:Label>
+                    </button>
+                </form> 
+            </div>
          </nav>
+       
+        
         <%--CONTENIDO DE LA PÁGINA--%>
          <div class="container-fluid grey darken-2">
              <%--CARRUSEL DE FOTOS--%>
@@ -128,6 +120,8 @@
                 <br />
             </div>
         </div>
+       
+        
         <!-- Footer -->
          <footer class="page-footer font-small black">
 
@@ -138,7 +132,38 @@
           <!-- Copyright -->
 
         </footer>
+       
+        
+        <!-- Login Modal -->
+         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content bg-dark">
+                          <div class="modal-header bg-dark">
+                            <h5 class="modal-title text-white" id="exampleModalLongTitle">Iniciar Sesión</h5>
+                            <button type="button" class="close white" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body text-center">
+                              <label class="text-center text-white">Usuario</label>
+                              <asp:TextBox runat="server" ID="txtLogin" CssClass="form-control bg-dark text-white"></asp:TextBox>
+                              <label class="text-center text-white">Contraseña</label>
+                              <asp:TextBox runat="server" ID="txtPassword" CssClass="form-control bg-dark text-white"></asp:TextBox>
+                          </div>
+                          <div class="modal-footer">
+                            <asp:Button runat="server" ID="btnLogin" CssClass="btn btn-primary btn-block" Text="Acceder" OnClick="btnLogin_Click"/>
+                            <div class="text-center mx-auto">
+                                <asp:Label runat="server" ID="lblError" CssClass="alert alert-danger" Text="Usuario no encontrado. Revise sus datos." Visible="false"></asp:Label>
+						        ¿No tiene una cuenta? <a href="register.aspx" class="ml-2">¡Regístrse!</a>
+					        </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
     </form>
+
+    <script src="scripts/funcitons.js"></script>
+    <!-- Scrpts dependientes de Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

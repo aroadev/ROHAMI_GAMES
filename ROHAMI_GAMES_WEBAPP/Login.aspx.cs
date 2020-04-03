@@ -27,8 +27,6 @@ namespace ROHAMI_GAMES_WEBAPP
             Session["DatosUsuario"] = ObjBC.ValidarLogin(usuario, password);
 
             DataSet dt = (DataSet)Session["DatosUsuario"];
-            
-            //string nombre = dt.Tables[0].Rows[0]["NOMBRE"].ToString();
 
             if(dt.Tables[0].Rows.Count == 0)
             {
